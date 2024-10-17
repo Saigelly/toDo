@@ -149,17 +149,51 @@ body{
     display: flex;
     align-items: center;
     width: 100%;
-    height: 50px;
-    
+    min-height: 55px;
     border-bottom: 2px solid #0000002d;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 65px ;
+}
+.task-list__item:hover{
+    background-color: rgba(128, 128, 128, 0.116);
+}
+
+.task-list__item_done{
+    text-decoration: line-through;
+    background-color: rgba(128, 128, 128, 0.678);
+    color: #fff;
+}
+.task-list__item.task-list__item_done:hover{
+
+    background-color: rgba(128, 128, 128, 0.678);
+}
+.task-list__item_done::before{
+    content: '';
+    background: url(../img/check.png) center center/ cover;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+
 }
 .task-list__text {
+    max-width: 450px;
+    
+    
+    overflow-wrap: break-word;
     
 }
+/* .task-list__text_thr{
+    text-decoration: line-through;
+} */
 .task-list__action{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 5px;
+    top: 5px;
+    top: calc(center - 50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +206,7 @@ body{
     width: 45px;
     height: 45px;
     border: 1px solid transparent;
-    transition: all .3s 0s ease-in-out;;
+    transition: all .2s 0s ease-in-out;
 }
 .task-list__btn:hover{
     scale: 1.05;
@@ -185,25 +219,27 @@ body{
     
 }
 .task-list__btn_done:hover{
+    background-color: #2de287;
     border: 1px solid #18753c;
 }
 .task-list__btn_done:active{
-    scale: 1.05;
-    background-color: #2de287;
-    
+    scale: 1;
+    background-color: transparent;
 }
 .task-list__btn_del {
 }
 
 .task-list__btn_del:hover{
+    background-color: #e22d36;
     border: 1px solid #751818;
 }
 .task-list__btn_del:active{
-    scale: 1.05;
-    background-color: #e22d36;
+    scale: 1;
+    background-color: transparent;
     
 }
-.task-list__btn-img{
+.task-list__btn-done_img,
+.task-list__btn-del_img{
     width: 40px;
     height: 40px;
 }
