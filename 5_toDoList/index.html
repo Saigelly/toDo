@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,75 @@
     <link rel="stylesheet" href="css/style.css">
     <title>ToDoList</title>
 </head>
+
 <body>
-   
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Список дел</h1>
+            </div>
+
+        </header>
+        <main class="main">
+            <section class="control">
+                <div class="container">
+                        <form action="#" class="control__form">
+                            <input type="text" class="control__input" placeholder="Введите задачу">
+                            <button class="control__btn">Добавить</button>
+                            
+                        </form>
+                </div>
+            </section>
+            <section class="task">
+                <div class="container">
+                    <ul class="task__list task-list">
+                        <li class="task-list__item">
+                            <p class="task-list__text">Написать разметку</p>
+                            <ul class="task-list__action">
+                                <li class="task-list__btn task-list__btn_done">
+                                    <img src="../5_toDoList/img/done.png"  alt="done" class="task-list__btn-img">
+                                </li>
+                                <li class="task-list__btn task-list__btn_del">
+                                    <img src="../5_toDoList/img/delete.png" alt="delete" class="task-list__btn-img">
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+                        <li class="task-list__item">
+                            <p class="task-list__text">Написать разметку</p>
+                            <ul class="task-list__action">
+                                <li class="task-list__btn task-list__btn_done">
+                                    <img src="../5_toDoList/img/done.png"  alt="done" class="task-list__btn-img">
+                                </li>
+                                <li class="task-list__btn task-list__btn_del">
+                                    <img src="../5_toDoList/img/delete.png" alt="delete" class="task-list__btn-img">
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+                        <li class="task-list__item">
+                            <p class="task-list__text">Написать разметку</p>
+                            <ul class="task-list__action">
+                                <li class="task-list__btn task-list__btn_done">
+                                    <img src="../5_toDoList/img/done.png"  alt="done" class="task-list__btn-img">
+                                </li>
+                                <li class="task-list__btn task-list__btn_del">
+                                    <img src="../5_toDoList/img/delete.png" alt="delete" class="task-list__btn-img">
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+
+    </div>
     <script src="js/script.js"></script>
 </body>
-</html> 
+
+</html>
