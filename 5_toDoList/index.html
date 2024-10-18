@@ -22,42 +22,40 @@
         <main class="main">
             <section class="control">
                 <div class="container">
-                        <form action="#" class="control__form">
-                            <input type="text" class="control__input" placeholder="Введите задачу">
-                            <button class="control__btn">Добавить</button>
-                            
-                        </form>
+                    <form action="#" class="control__form">
+                        <input type="text" class="control__input" placeholder="Введите задачу">
+                        <button class="control__btn">Добавить</button>
+                    </form>
                 </div>
             </section>
             <section class="task">
                 <div class="container">
                     <ul class="task__list task-list">
-                        <li class="task-list__item task-list__item_done">
-                            <p class="task-list__text">Написать разметку Написать разметку Написать разметку Написать разметку Написать разметку Написать разметку Написать разметку Написать разметку Написать разметку </p>
-                            <ul class="task-list__action">
-                                <li class="task-list__btn task-list__btn_done">
-                                    <img src="../5_toDoList/img/done.png"  alt="done" class="task-list__btn-done_img">
+                        <header class="task-list__header">
+                            <ul class="task-list__action action-list">
+                                <li class="action-list_item action-list__btn action-list__btn_cancel">
+                                    <img src="../5_toDoList/img/cancel.png" alt="cancel" class="btn-action__img btn-action__img_cancel">
                                 </li>
-                                <li class="task-list__btn task-list__btn_del">
-                                    <img src="../5_toDoList/img/delete.png" alt="delete" class="task-list__btn-del_img">
+                                <li class="action-list_item action-list__quntite">Выбрано 2</li>
+                                <li class="action-list_item action-list__btn action-list__btn_choose-all">Выбрать всё</li>
+                                <li class="action-list_item action-list__btn action-list__btn_delete-all">Удалить всё</li>
+                            </ul>
+                        </header>
+                        <li class="task-list__item item">
+                            <p class="item__text">Написать разметку Написать разметку Написать разметку Написать
+                                разметку Написать разметку Написать разметку Написать разметку Написать разметку
+                                Написать разметку </p>
+                            <ul class="item__action">
+                                <li class="btn-action btn-action_done">
+                                    <img src="../5_toDoList/img/done.png" alt="done" class="btn-action__img btn-action__img_done">
                                 </li>
-                                
-                                
+                                <li class="btn-action btn-action_del">
+                                    <img src="../5_toDoList/img/delete.png" alt="delete" class="btn-action__img btn-action__img_del">
+                                </li>
+
                             </ul>
                         </li>
-                        <li class="task-list__item task-list__item_done">
-                            <p class="task-list__text">Написать разметку</p>
-                            <ul class="task-list__action">
-                                <li class="task-list__btn task-list__btn_done">
-                                    <img src="../5_toDoList/img/done.png"  alt="done" class="task-list__btn-done_img">
-                                </li>
-                                <li class="task-list__btn task-list__btn_del">
-                                    <img src="../5_toDoList/img/delete.png" alt="delete" class="task-list__btn-del_img">
-                                </li>
-                                
-                                
-                            </ul>
-                        </li>
+
 
                     </ul>
                 </div>
