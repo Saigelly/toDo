@@ -126,25 +126,90 @@ body{
     background-color: #2d79e2;
     color: #ffffff;
 }
-.task {
-}
 .task__list {
-    margin: 0 auto;    
-
+    margin: 0 auto;
+    
 }
-.task-list {
+.task-list{
     display: flex;
     flex-direction: column;
     max-width: 670px;
     min-height: 500px;
     background-color: #fff;
     border-radius: 5px;
-    padding: 60px 20px;
+    /* padding: 20px;   */
 }
-.task-list .task-list__item:not(:last-child){
+
+.task-list__tasks{
+       padding: 20px;
+    
+}
+
+.task-list__tasks .task-list__item:not(:last-child){
     margin-bottom: 10px;
 }
-.task-list__item {
+
+/* Работа с управлением */
+.task-list__header {
+    padding: 20px;
+    opacity: 1;
+    background-color: #0000002d;
+    color: #183f75;
+    border-radius: 5px 5px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+._active{
+    opacity: 1;
+}
+.action-list {
+    display: flex; 
+    
+    min-height: 45px;
+    width: 100%;
+    align-items: center;
+    font-size: 24px;
+    gap: 20px;
+   
+}
+
+.action-list_item {
+}
+
+.action-list__btn_cancel {
+}
+.btn-action__img {
+}
+.btn-action__img_cancel {
+}
+.action-list__quntite {
+    margin-right: auto;
+    
+}
+.action-list__btn{
+    height: 45px;
+    line-height: 35px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: all .2s 0s ease-in-out;
+    cursor: pointer;
+}
+
+.action-list__btn:hover{
+    scale: 1.05;
+    border-radius: 5px;
+}
+
+.action-list__btn_choose-all {
+}
+.action-list__btn_delete-all {
+}
+
+
+
+/* Работа с экземплярами тасков */
+.item{
     position: relative;
     display: flex;
     align-items: center;
@@ -155,21 +220,26 @@ body{
     border-radius: 5px;
     padding: 10px;
     padding-left: 65px ;
+    cursor: pointer;
 }
-.task-list__item:hover{
+
+.item:hover{
     background-color: rgba(128, 128, 128, 0.116);
 }
-
-.task-list__item_done{
+.item_done{
     text-decoration: line-through;
-    background-color: rgba(128, 128, 128, 0.678);
+    background-color: rgba(53, 153, 61, 0.678);
     color: #fff;
 }
-.task-list__item.task-list__item_done:hover{
-
-    background-color: rgba(128, 128, 128, 0.678);
+.item.item_done:hover{
+    background-color: rgba(53, 153, 61, 0.678);
 }
-.task-list__item_done::before{
+.item.item_checked,
+.item.item_checked:hover{
+    /* background-color: rgba(128, 128, 128, 0.308); */
+    opacity: 0.5;
+}
+.item_done::before{
     content: '';
     background: url(../img/check.png) center center/ cover;
     width: 45px;
@@ -177,19 +247,28 @@ body{
     position: absolute;
     left: 10px;
     top: 5px;
+}
+.item_checked::before{
+    content: '';
+    background: url(../img/checked.png) center center/ cover;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.item__checkbox{
+    visibility: hidden;
+    position: absolute;
 
 }
-.task-list__text {
+
+.item__text {
     max-width: 450px;
-    
-    
     overflow-wrap: break-word;
-    
-}
-/* .task-list__text_thr{
-    text-decoration: line-through;
-} */
-.task-list__action{
+    }
+
+.item__action{
     position: absolute;
     right: 5px;
     top: 5px;
@@ -199,7 +278,20 @@ body{
     align-items: center;
     gap: 10px;
 }
-.task-list__btn{
+
+
+
+
+
+
+
+
+
+
+
+
+/* Работа с кнопками */
+.btn-action{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,39 +299,41 @@ body{
     height: 45px;
     border: 1px solid transparent;
     transition: all .2s 0s ease-in-out;
-}
-.task-list__btn:hover{
-    scale: 1.05;
-    background-color: transparent;
-    border-radius: 5px;
-    
+    cursor: pointer;
 }
 
-.task-list__btn_done {
-    
+.btn-action:hover{
+    scale: 1.05;
+    border-radius: 5px;
 }
-.task-list__btn_done:hover{
-    background-color: #2de287;
+
+.btn-action_done:hover{
+    background-color: #18753c2f;
     border: 1px solid #18753c;
 }
-.task-list__btn_done:active{
+.btn-action_done:active{
     scale: 1;
-    background-color: transparent;
-}
-.task-list__btn_del {
+    background-color: #18753cad;
 }
 
-.task-list__btn_del:hover{
-    background-color: #e22d36;
+.btn-action_del:hover{
+    background-color: #7518182f;
     border: 1px solid #751818;
 }
-.task-list__btn_del:active{
+.btn-action_del:active{
     scale: 1;
-    background-color: transparent;
+    background-color: #751818ad;
     
 }
-.task-list__btn-done_img,
-.task-list__btn-del_img{
+.btn-action__header:hover{
+    background-color: #183f752f;
+    border: 1px solid #183f75;
+}
+.btn-action__header:active{
+    scale: 1;
+    background-color: #183f75ad;
+}
+.btn-action__img{
     width: 40px;
     height: 40px;
 }
