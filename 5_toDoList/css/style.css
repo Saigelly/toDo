@@ -152,10 +152,12 @@ body{
     border-radius: 5px 5px 0 0;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 ._active{
     opacity: 1;
+    pointer-events: all;
 }
 .action-list {
     display: flex; 
